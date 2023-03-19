@@ -1,10 +1,22 @@
 function verificaSeOchutePossuiUmValorValido(chute){
+
+    if (chute === "Game Over.") {
+
+        document.body.innerHTML =
+            `
+            <h2>Desistiu, você disse ${chute}!!!</h2>
+            <h3>Pressione o botão para jogar novamente</h3>
+            <button id="jogar-novamente" class="btn-jogar" >Jogar novamente</button>
+            `
+            document.body.style.backgroundColor = "black";
+    }
+
     const numero = +chute
 
     if (chuteForInvalido(numero)) {
-        elementoChute.innerHTML += `<div>Valor inválido</div>`
-        return
+        elementoChute.innerHTML += '<div>Valor Inválido</div>';
     }
+
 
     if (numero > maiorValor || numero < menorValor) {
         elementoChute.innerHTML += `<div>Valor inválido: fale um 
